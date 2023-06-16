@@ -111,8 +111,8 @@ class SalomonBottomBar extends StatelessWidget {
                           children: [
                             IconTheme(
                               data: IconThemeData(
-                                color: Color.lerp(
-                                    _unselectedColor, _selectedColor, t),
+                                color:
+                                    Color.lerp(_unselectedColor, _textColor, t),
                                 size: 24,
                               ),
                               child: items.indexOf(item) == currentIndex
