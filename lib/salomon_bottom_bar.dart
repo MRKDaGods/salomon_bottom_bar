@@ -87,6 +87,8 @@ class SalomonBottomBar extends StatelessWidget {
                       unselectedItemColor ??
                       theme.iconTheme.color;
 
+                  final _textColor = item.selectedTextColor ?? Colors.white;
+
                   return Material(
                     color: Color.lerp(
                         _selectedColor.withOpacity(0.0),
@@ -140,8 +142,8 @@ class SalomonBottomBar extends StatelessWidget {
                                     child: DefaultTextStyle(
                                       style: TextStyle(
                                         color: Color.lerp(
-                                            _selectedColor.withOpacity(0.0),
-                                            _selectedColor,
+                                            _textColor.withOpacity(0.0),
+                                            _textColor,
                                             t),
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -182,11 +184,15 @@ class SalomonBottomBarItem {
   /// The color to display when this tab is not selected.
   final Color? unselectedColor;
 
+  /// Selected text color
+  final Color? selectedTextColor;
+
   SalomonBottomBarItem({
     required this.icon,
     required this.title,
     this.selectedColor,
     this.unselectedColor,
     this.activeIcon,
+    this.selectedTextColor,
   });
 }
